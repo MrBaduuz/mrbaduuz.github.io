@@ -2,17 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://mrbaduuz.github.io/tags/groff/</loc>
+    <lastmod>2022-11-19T21:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://mrbaduuz.github.io/posts/groff/</loc>
+    <lastmod>2022-11-19T21:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://mrbaduuz.github.io/</loc>
+    <lastmod>2022-11-19T21:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://mrbaduuz.github.io/posts/</loc>
+    <lastmod>2022-11-19T21:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://mrbaduuz.github.io/tags/software/</loc>
+    <lastmod>2022-11-19T21:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://mrbaduuz.github.io/tags/</loc>
+    <lastmod>2022-11-19T21:54:01+01:00</lastmod>
+  </url><url>
     <loc>http://mrbaduuz.github.io/posts/hello-world/</loc>
     <lastmod>2022-11-13T11:01:39+01:00</lastmod>
   </url><url>
-    <loc>http://mrbaduuz.github.io/</loc>
-    <lastmod>2022-11-13T11:01:39+01:00</lastmod>
-  </url><url>
-    <loc>http://mrbaduuz.github.io/posts/</loc>
+    <loc>http://mrbaduuz.github.io/tags/update/</loc>
     <lastmod>2022-11-13T11:01:39+01:00</lastmod>
   </url><url>
     <loc>http://mrbaduuz.github.io/categories/</loc>
-  </url><url>
-    <loc>http://mrbaduuz.github.io/tags/</loc>
   </url>
 </urlset>

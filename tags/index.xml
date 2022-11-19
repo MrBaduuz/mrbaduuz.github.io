@@ -5,9 +5,82 @@
 	<description>Recent content in Tags on MrBaduuz</description>
 	<generator>Hugo -- gohugo.io</generator>
 	<language>en-us</language>
+	<lastBuildDate>Sat, 19 Nov 2022 21:54:01 +0100</lastBuildDate>
     
         <atom:link href="http://mrbaduuz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
 	
+	
+	<item>
+		<title>Groff</title>
+		<link>http://mrbaduuz.github.io/posts/groff/</link>
+		<pubDate>Sat, 19 Nov 2022 21:54:01 +0100</pubDate>
+		
+		<guid>http://mrbaduuz.github.io/posts/groff/</guid>
+		<description>&lt;h1 id=&#34;why-do-i-use-groff&#34;&gt;Why do I use &lt;em&gt;groff&lt;/em&gt;?&lt;/h1&gt;
+&lt;p&gt;To be honest I have been using &lt;em&gt;groff&lt;/em&gt; for a couple of days.
+However, there are two benefits I have noticed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Compilation speed&lt;/li&gt;
+&lt;li&gt;Clean &amp;ldquo;code&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;compilation-speed&#34;&gt;Compilation speed&lt;/h2&gt;
+&lt;p&gt;The benefit of compilation speed should be clear to anyone that has dealt with
+a medium sized &lt;em&gt;Latex&lt;/em&gt; document.
+The compilation times are horrendous.
+Because &lt;em&gt;groff&lt;/em&gt; is more minimal by trait,
+compilation times are faster by a large margin.
+However, it is to be noted that I haven&amp;rsquo;t created any large documents
+with &lt;em&gt;groff&lt;/em&gt; yet.&lt;/p&gt;
+&lt;h2 id=&#34;clean-code&#34;&gt;Clean &amp;ldquo;code&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;Although, not comparable to &lt;em&gt;Markdown&lt;/em&gt;, &lt;em&gt;groff&lt;/em&gt; syntax is pretty clean.
+Most macros have to start at the line beginning,
+which makes the code much cleaner.
+&amp;ldquo;Bolding&amp;rdquo; and &amp;ldquo;Italicing&amp;rdquo; can be done inline with &lt;strong&gt;&amp;quot;\fB&amp;quot;&lt;/strong&gt; and &lt;strong&gt;&amp;quot;\fI&amp;quot;&lt;/strong&gt;.
+Depending on the macro set being used section heading are very comparable
+to Markdown headings.
+For example: &amp;ldquo;.sh [depth] [title]&amp;rdquo; for the me-macros.&lt;/p&gt;
+&lt;h1 id=&#34;macros&#34;&gt;Macros&lt;/h1&gt;
+&lt;p&gt;There are a number of macro-sets that are installed by default:
+&lt;em&gt;me, mm, mom, ms&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In the beginning it might be very difficult to choose the right macro-set
+for you.
+If you are first getting started to use &lt;em&gt;groff&lt;/em&gt;,
+the &lt;em&gt;ms&lt;/em&gt; macros are probably the easiest to get started with.
+The reason for that is, that there are a bunch of resources about it online.&lt;/p&gt;
+&lt;p&gt;However, I found that the &lt;em&gt;me&lt;/em&gt; macros are way cleaner and almost have the same
+features.
+I will probably follow up this post with an &lt;em&gt;me&lt;/em&gt; tutorial.&lt;/p&gt;
+&lt;h1 id=&#34;preprocessors&#34;&gt;Preprocessors&lt;/h1&gt;
+&lt;p&gt;The power of &lt;em&gt;groff&lt;/em&gt; comes from the multitude of preprocessors available.
+The most important pre-installed ones are:
+&lt;em&gt;eqn&lt;/em&gt;, &lt;em&gt;refer&lt;/em&gt;, &lt;em&gt;tbl&lt;/em&gt; and &lt;em&gt;pic&lt;/em&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;eqn&lt;/em&gt;: equations support&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;refer&lt;/em&gt;: bibliography support (similar to &lt;em&gt;bibtex&lt;/em&gt;, etc&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;tbl&lt;/em&gt;: table support&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;pic&lt;/em&gt;: picture compiler (similar to &lt;em&gt;tikz&lt;/em&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Without preprocessors &lt;em&gt;groff&lt;/em&gt; would probably be useless.
+However, with them it is almost on par with &lt;em&gt;Latex&lt;/em&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;problems&#34;&gt;Problems&lt;/h1&gt;
+&lt;p&gt;Using custom fonts is kind of difficult.&lt;/p&gt;
+&lt;p&gt;There is no &amp;ldquo;real&amp;rdquo; utf-8 support. The only way utf-8 is supported is via a
+pre-processor (&lt;em&gt;preconv&lt;/em&gt;) that converts utf-8 to characters available
+in &lt;em&gt;groff&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The last 2 problems arise from &lt;em&gt;groff&lt;/em&gt; being single-pass:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Forward references aren&amp;rsquo;t available by default (in most macro-sets).&lt;/li&gt;
+&lt;li&gt;A Table of contents can only be added to the end of the file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;links-with-useful-resources&#34;&gt;Links with useful resources&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=w8EKH_fjmXA&#34;&gt;Luke Smith Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/groff/comments/ibsyh8/automatic_equation_number_resolving_forward/&#34;&gt;Forward References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/unix-text-processing/9780810462915/Chapter09.html#ch9-tab2&#34;&gt;&lt;em&gt;eqn&lt;/em&gt; Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=bvkmnK6-qao&amp;amp;t=943s&#34;&gt;Gavin Freeborn Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+	</item>
 	
 	<item>
 		<title>Hello World</title>

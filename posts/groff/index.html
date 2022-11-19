@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Groff | MrBaduuz</title>
+	<link rel="canonical" href="http://mrbaduuz.github.io/">
+	<link rel='alternate' type='application/rss+xml' title="MrBaduuz RSS" href='/index.xml'>
+	<link rel='stylesheet' type='text/css' href='/style.css'>
+	<link rel="icon" href="/favicon.ico">
+	<meta name="description" content="Why do I use groff? To be honest I have been using groff for a couple of days. However, there are two benefits I have noticed:
+Compilation speed Clean &ldquo;code&rdquo; Compilation speed The benefit of compilation speed should be clear to anyone that has dealt with a medium sized Latex document. The compilation times are horrendous. Because groff is more minimal by trait, compilation times are faster by a large margin.">
+	<meta name="keywords" content="groff, software">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta charset="utf-8">
+</head>
+<body>
+<nav class="top-nav">
+    <ul>
+	<li><a href="/"><span class=pre></span><span class=menuname>Home</span></a></li>
+	<li><a href="/about/"><span class=pre></span><span class=menuname>About</span></a></li>
+	<li><a class="menuactive" href="/posts/"><span class=pre></span><span class=menuname>Posts</span></a></li>
+	<li><a href="/tags/"><span class=pre></span><span class=menuname>Tags</span></a></li>
+    </ul>
+</nav>
+<main>
+<header><h1 id="tag_Groff">Groff</h1></header>
+<article>
+
+<h1 id="why-do-i-use-groff">Why do I use <em>groff</em>?</h1>
+<p>To be honest I have been using <em>groff</em> for a couple of days.
+However, there are two benefits I have noticed:</p>
+<ol>
+<li>Compilation speed</li>
+<li>Clean &ldquo;code&rdquo;</li>
+</ol>
+<h2 id="compilation-speed">Compilation speed</h2>
+<p>The benefit of compilation speed should be clear to anyone that has dealt with
+a medium sized <em>Latex</em> document.
+The compilation times are horrendous.
+Because <em>groff</em> is more minimal by trait,
+compilation times are faster by a large margin.
+However, it is to be noted that I haven&rsquo;t created any large documents
+with <em>groff</em> yet.</p>
+<h2 id="clean-code">Clean &ldquo;code&rdquo;</h2>
+<p>Although, not comparable to <em>Markdown</em>, <em>groff</em> syntax is pretty clean.
+Most macros have to start at the line beginning,
+which makes the code much cleaner.
+&ldquo;Bolding&rdquo; and &ldquo;Italicing&rdquo; can be done inline with <strong>&quot;\fB&quot;</strong> and <strong>&quot;\fI&quot;</strong>.
+Depending on the macro set being used section heading are very comparable
+to Markdown headings.
+For example: &ldquo;.sh [depth] [title]&rdquo; for the me-macros.</p>
+<h1 id="macros">Macros</h1>
+<p>There are a number of macro-sets that are installed by default:
+<em>me, mm, mom, ms</em>.</p>
+<p>In the beginning it might be very difficult to choose the right macro-set
+for you.
+If you are first getting started to use <em>groff</em>,
+the <em>ms</em> macros are probably the easiest to get started with.
+The reason for that is, that there are a bunch of resources about it online.</p>
+<p>However, I found that the <em>me</em> macros are way cleaner and almost have the same
+features.
+I will probably follow up this post with an <em>me</em> tutorial.</p>
+<h1 id="preprocessors">Preprocessors</h1>
+<p>The power of <em>groff</em> comes from the multitude of preprocessors available.
+The most important pre-installed ones are:
+<em>eqn</em>, <em>refer</em>, <em>tbl</em> and <em>pic</em>.</p>
+<ol>
+<li><em>eqn</em>: equations support</li>
+<li><em>refer</em>: bibliography support (similar to <em>bibtex</em>, etc&hellip;)</li>
+<li><em>tbl</em>: table support</li>
+<li><em>pic</em>: picture compiler (similar to <em>tikz</em>)</li>
+</ol>
+<p>Without preprocessors <em>groff</em> would probably be useless.
+However, with them it is almost on par with <em>Latex</em>.</p>
+<h1 id="problems">Problems</h1>
+<p>Using custom fonts is kind of difficult.</p>
+<p>There is no &ldquo;real&rdquo; utf-8 support. The only way utf-8 is supported is via a
+pre-processor (<em>preconv</em>) that converts utf-8 to characters available
+in <em>groff</em>.</p>
+<p>The last 2 problems arise from <em>groff</em> being single-pass:</p>
+<ol>
+<li>Forward references aren&rsquo;t available by default (in most macro-sets).</li>
+<li>A Table of contents can only be added to the end of the file</li>
+</ol>
+<h1 id="links-with-useful-resources">Links with useful resources</h1>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=w8EKH_fjmXA">Luke Smith Video</a></li>
+<li><a href="https://www.reddit.com/r/groff/comments/ibsyh8/automatic_equation_number_resolving_forward/">Forward References</a></li>
+<li><a href="https://www.oreilly.com/library/view/unix-text-processing/9780810462915/Chapter09.html#ch9-tab2"><em>eqn</em> Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=bvkmnK6-qao&amp;t=943s">Gavin Freeborn Video</a></li>
+</ol>
+
+
+</article>
+</main>
+
+<footer>
+	<a href="http://mrbaduuz.github.io/">http://mrbaduuz.github.io/</a>
+</footer>
+
+</body>
+</html>
