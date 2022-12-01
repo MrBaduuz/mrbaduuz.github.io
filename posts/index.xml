@@ -5,10 +5,112 @@
 	<description>Recent content in Posts on MrBaduuz</description>
 	<generator>Hugo -- gohugo.io</generator>
 	<language>en-us</language>
-	<lastBuildDate>Sat, 19 Nov 2022 21:54:01 +0100</lastBuildDate>
+	<lastBuildDate>Thu, 01 Dec 2022 07:54:46 +0100</lastBuildDate>
     
         <atom:link href="http://mrbaduuz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 	
+	
+	<item>
+		<title>Groff Tutorial</title>
+		<link>http://mrbaduuz.github.io/posts/groff-tutorial/</link>
+		<pubDate>Thu, 01 Dec 2022 07:54:46 +0100</pubDate>
+		
+		<guid>http://mrbaduuz.github.io/posts/groff-tutorial/</guid>
+		<description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;If you don&amp;rsquo;t have a clue what &lt;em&gt;groff&lt;/em&gt; is, have a look at my &lt;a href=&#34;../groff&#34;&gt;first post&lt;/a&gt; about it.&lt;/p&gt;
+&lt;p&gt;This post is mostly focussed on the &lt;em&gt;me&lt;/em&gt; macros.
+Because there are lots of tutorials on the &lt;em&gt;ms&lt;/em&gt; macros
+(&lt;a href=&#34;https://www.youtube.com/watch?v=w8EKH_fjmXA&#34;&gt;Good Introduction&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;I will be comparing some markdown functionality with the corresponding macros in &lt;em&gt;groff&lt;/em&gt;,
+as I feel like most people know about markdown.&lt;/p&gt;
+&lt;p&gt;As with all macros for &lt;em&gt;groff&lt;/em&gt;, commands have to start at the beginning of a line.
+Comments are created using&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\&amp;#34; This is a comment.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Also: don&amp;rsquo;t leave any blank lines. Those will cause problems with formatting.
+If you want some spacing use a line with only a &amp;ldquo;.&amp;rdquo;.&lt;/p&gt;
+&lt;h1 id=&#34;compilation&#34;&gt;Compilation&lt;/h1&gt;
+&lt;p&gt;To compile a document with the &lt;em&gt;me&lt;/em&gt; macros, issue the command&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ groff name_of_file -Tpdf -me &amp;gt; name_of_document.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;-Tpdf&lt;/code&gt; tells groff to produce pdf output instead of postscript
+and &lt;code&gt;-me&lt;/code&gt; tells it that we are using the &lt;em&gt;me&lt;/em&gt; macros.&lt;/p&gt;
+&lt;p&gt;As &lt;em&gt;groff&lt;/em&gt; writes to &lt;em&gt;stdout&lt;/em&gt; we have to pipe the output into the document we want to create.&lt;/p&gt;
+&lt;h1 id=&#34;headings&#34;&gt;Headings&lt;/h1&gt;
+&lt;p&gt;To create a section heading use&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.uh &amp;#34;heading&amp;#34;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A numbered section heading is the same but with &lt;code&gt;.sh&lt;/code&gt; instead of &lt;code&gt;.uh&lt;/code&gt;.
+It can also have a different depth:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.sh n &amp;#34;heading&amp;#34;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &lt;code&gt;n&lt;/code&gt; stands for the depth of the heading, such as the amount of &lt;code&gt;#&lt;/code&gt; in markdown.&lt;/p&gt;
+&lt;p&gt;To change the point size of headings use&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.nr sp point_size.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To add more spacing before headings use&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.nr ss spacing.
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;paragraphs&#34;&gt;Paragraphs&lt;/h1&gt;
+&lt;p&gt;Paragraphs are created using &lt;code&gt;.pp&lt;/code&gt;.
+The text below that will be printed as an indented paragraph.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t want an indent use &lt;code&gt;.lp&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;To change the point size:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.nr pp point_size
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;lists&#34;&gt;Lists&lt;/h1&gt;
+&lt;h2 id=&#34;bulleted&#34;&gt;Bulleted&lt;/h2&gt;
+&lt;p&gt;To create a bulleted list you can use &lt;code&gt;.bu&lt;/code&gt;. This will create a bulleted paragraph.
+For example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.bu
+First item
+.bu
+Second item
+.bu
+Third item
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Is converted to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;numbered&#34;&gt;Numbered&lt;/h2&gt;
+&lt;p&gt;Numbered lists use &lt;code&gt;.np&lt;/code&gt; (Numbered paragraph).
+For example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.np
+First item
+.np
+Second item
+.np
+Third item
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Is converted to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;italics--bold&#34;&gt;Italics &amp;amp; Bold&lt;/h1&gt;
+&lt;p&gt;To italicize a word you can use &lt;code&gt;\fI&lt;/code&gt;word&lt;code&gt;\fP&lt;/code&gt; inline.
+Bold works the same but with &lt;code&gt;fB&lt;/code&gt; (Don&amp;rsquo;t forget the &lt;code&gt;\fP&lt;/code&gt;, it returns the text to normal).
+To bold and italicize you can use &lt;code&gt;f[BI]&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;underlining&#34;&gt;Underlining&lt;/h1&gt;
+&lt;p&gt;Underlining isn&amp;rsquo;t as easy as use have to start a new line with&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.u &amp;#34;Text to be underlined&amp;#34;.
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;quotes&#34;&gt;Quotes&lt;/h1&gt;
+&lt;p&gt;To create a block quote use:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.(q
+This is the quote.
+.)q
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is the quote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To add a footnote you can use:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Text\**
+.(f
+\**This is a footnote to the text.
+.)f
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;example&#34;&gt;Example&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mrbaduuz.github.io/resources/basic.me&#34;&gt;Groff file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mrbaduuz.github.io/resources/basic.pdf&#34;&gt;PDF file&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also have a look at the &lt;a href=&#34;https://fossies.org/linux/groff/doc/meref.me&#34;&gt;&lt;em&gt;me&lt;/em&gt; reference&lt;/a&gt;.&lt;/p&gt;
+</description>
+	</item>
 	
 	<item>
 		<title>Groff</title>

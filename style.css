@@ -17,13 +17,20 @@ main {
 	margin: auto;
 }
 
-
 img {
 	max-width: 100%;
 }
 
 header h1 {
 	text-align: center;
+}
+
+article h1 {
+	font-size: 2em;
+}
+
+article h2 {
+	font-size: 1.5em;
 }
 
 footer {
@@ -41,9 +48,13 @@ a:visited {
 
 .top-nav ul {
 	display: flex;
+	gap: 2em;
 }
 .top-nav ul li {
 	list-style-type: none;
+}
+.top-nav ul li a {
+	text-decoration: none;
 }
 
 /* For TAGLIST.HTML */

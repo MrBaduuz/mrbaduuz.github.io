@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Groff Tutorial | MrBaduuz</title>
+	<link rel="canonical" href="http://mrbaduuz.github.io/">
+	<link rel='alternate' type='application/rss+xml' title="MrBaduuz RSS" href='/index.xml'>
+	<link rel='stylesheet' type='text/css' href='/style.css'>
+	<link rel="icon" href="/favicon.ico">
+	<meta name="description" content="Introduction If you don&rsquo;t have a clue what groff is, have a look at my first post about it.
+This post is mostly focussed on the me macros. Because there are lots of tutorials on the ms macros (Good Introduction).
+I will be comparing some markdown functionality with the corresponding macros in groff, as I feel like most people know about markdown.
+As with all macros for groff, commands have to start at the beginning of a line.">
+	<meta name="keywords" content="groff, software, tutorial">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta charset="utf-8">
+</head>
+<body>
+<nav class="top-nav">
+    <ul>
+	
+		
+			<li><a href="/"><span class=pre></span><span class=menuname>Home</span></a></li>
+			<li><a href="/about/"><span class=pre></span><span class=menuname>About</span></a></li>
+			<li><a class="menuactive" href="/posts/"><span class=pre></span><span class=menuname>Posts</span></a></li>
+			<li><a href="/tags/"><span class=pre></span><span class=menuname>Tags</span></a></li>
+	
+    </ul>
+</nav>
+<main>
+<header><h1 id="tag_Groff Tutorial">Groff Tutorial</h1></header>
+<article>
+
+<h1 id="introduction">Introduction</h1>
+<p>If you don&rsquo;t have a clue what <em>groff</em> is, have a look at my <a href="../groff">first post</a> about it.</p>
+<p>This post is mostly focussed on the <em>me</em> macros.
+Because there are lots of tutorials on the <em>ms</em> macros
+(<a href="https://www.youtube.com/watch?v=w8EKH_fjmXA">Good Introduction</a>).</p>
+<p>I will be comparing some markdown functionality with the corresponding macros in <em>groff</em>,
+as I feel like most people know about markdown.</p>
+<p>As with all macros for <em>groff</em>, commands have to start at the beginning of a line.
+Comments are created using</p>
+<pre tabindex="0"><code>.\&#34; This is a comment.
+</code></pre><p>Also: don&rsquo;t leave any blank lines. Those will cause problems with formatting.
+If you want some spacing use a line with only a &ldquo;.&rdquo;.</p>
+<h1 id="compilation">Compilation</h1>
+<p>To compile a document with the <em>me</em> macros, issue the command</p>
+<pre tabindex="0"><code>$ groff name_of_file -Tpdf -me &gt; name_of_document.pdf
+</code></pre><p><code>-Tpdf</code> tells groff to produce pdf output instead of postscript
+and <code>-me</code> tells it that we are using the <em>me</em> macros.</p>
+<p>As <em>groff</em> writes to <em>stdout</em> we have to pipe the output into the document we want to create.</p>
+<h1 id="headings">Headings</h1>
+<p>To create a section heading use</p>
+<pre tabindex="0"><code>.uh &#34;heading&#34;.
+</code></pre><p>A numbered section heading is the same but with <code>.sh</code> instead of <code>.uh</code>.
+It can also have a different depth:</p>
+<pre tabindex="0"><code>.sh n &#34;heading&#34;.
+</code></pre><p>Where <code>n</code> stands for the depth of the heading, such as the amount of <code>#</code> in markdown.</p>
+<p>To change the point size of headings use</p>
+<pre tabindex="0"><code>.nr sp point_size.
+</code></pre><p>To add more spacing before headings use</p>
+<pre tabindex="0"><code>.nr ss spacing.
+</code></pre><h1 id="paragraphs">Paragraphs</h1>
+<p>Paragraphs are created using <code>.pp</code>.
+The text below that will be printed as an indented paragraph.</p>
+<p>If you don&rsquo;t want an indent use <code>.lp</code> instead.</p>
+<p>To change the point size:</p>
+<pre tabindex="0"><code>.nr pp point_size
+</code></pre><h1 id="lists">Lists</h1>
+<h2 id="bulleted">Bulleted</h2>
+<p>To create a bulleted list you can use <code>.bu</code>. This will create a bulleted paragraph.
+For example:</p>
+<pre tabindex="0"><code>.bu
+First item
+.bu
+Second item
+.bu
+Third item
+</code></pre><p>Is converted to:</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ul>
+<h2 id="numbered">Numbered</h2>
+<p>Numbered lists use <code>.np</code> (Numbered paragraph).
+For example:</p>
+<pre tabindex="0"><code>.np
+First item
+.np
+Second item
+.np
+Third item
+</code></pre><p>Is converted to:</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h1 id="italics--bold">Italics &amp; Bold</h1>
+<p>To italicize a word you can use <code>\fI</code>word<code>\fP</code> inline.
+Bold works the same but with <code>fB</code> (Don&rsquo;t forget the <code>\fP</code>, it returns the text to normal).
+To bold and italicize you can use <code>f[BI]</code>.</p>
+<h1 id="underlining">Underlining</h1>
+<p>Underlining isn&rsquo;t as easy as use have to start a new line with</p>
+<pre tabindex="0"><code>.u &#34;Text to be underlined&#34;.
+</code></pre><h1 id="quotes">Quotes</h1>
+<p>To create a block quote use:</p>
+<pre tabindex="0"><code>.(q
+This is the quote.
+.)q
+</code></pre><p>This will create</p>
+<blockquote>
+<p>This is the quote.</p>
+</blockquote>
+<p>To add a footnote you can use:</p>
+<pre tabindex="0"><code>Text\**
+.(f
+\**This is a footnote to the text.
+.)f
+</code></pre><h1 id="example">Example</h1>
+<ul>
+<li><a href="/resources/basic.me">Groff file</a></li>
+<li><a href="/resources/basic.pdf">PDF file</a></li>
+</ul>
+<p>Also have a look at the <a href="https://fossies.org/linux/groff/doc/meref.me"><em>me</em> reference</a>.</p>
+
+
+</article>
+</main>
+
+<footer>
+	<a href="http://mrbaduuz.github.io/">http://mrbaduuz.github.io/</a>
+</footer>
+
+</body>
+</html>
